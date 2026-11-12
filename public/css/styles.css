@@ -694,6 +694,10 @@ img {
   margin: 0;
 }
 
+#honeypot {
+    display: none; /* Ensures it's not visible */
+}
+
 /* Footer */
 
 .site-footer {
