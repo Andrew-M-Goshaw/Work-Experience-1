@@ -788,7 +788,7 @@ body {
     display: none; /* Hide by default */
     flex-direction: column; /* Stack vertically */
     background-color: var(--ink); /* Set background color */
-    position: absolute; /* Positioning the menu */
+    position: static; /* Positioning the menu */
     top: 50px; /* Adjust based on your header height */
     right: 0; /* Align to the right */
     width: 100%; /* Full width */
@@ -799,6 +799,11 @@ body {
 
     .burger-menu {
       display: block;
+    }
+
+    .site-header--home nav {
+      display: flex;
+      flex-direction: column-reverse;
     }
 }
 
