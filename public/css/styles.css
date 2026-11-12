@@ -21,7 +21,12 @@
 
 body {
   margin: 0;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
   font-weight: 400;
   font-size: 17px;
   line-height: 1.6;
@@ -159,7 +164,23 @@ img {
   width: 34px;
   height: 34px;
   border-radius: 10px;
-  background: linear-gradient(135deg, var(--orange) 0%, var(--orange) 50%, var(--ink) 50%, var(--ink) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--orange) 0%,
+    var(--orange) 50%,
+    var(--ink) 50%,
+    var(--ink) 100%
+  );
+}
+
+/* Burger menu button */
+.burger-menu {
+  display: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--white);
 }
 
 .nav-links {
@@ -178,7 +199,7 @@ img {
 }
 
 .nav-links a:hover,
-.nav-links a[aria-current='page'] {
+.nav-links a[aria-current="page"] {
   color: var(--orange-dark);
 }
 
@@ -193,7 +214,13 @@ img {
 }
 
 .site-header--home .logo-mark {
-  background: linear-gradient(135deg, var(--orange) 0%, var(--orange) 50%, var(--white) 50%, var(--white) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--orange) 0%,
+    var(--orange) 50%,
+    var(--white) 50%,
+    var(--white) 100%
+  );
 }
 
 .site-header--home .container {
@@ -339,7 +366,7 @@ img {
 }
 
 .check-list li::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 6px;
@@ -458,7 +485,7 @@ img {
 }
 
 .icon-dot::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 13px;
   border-radius: 50%;
@@ -746,6 +773,46 @@ img {
   padding-top: 24px;
 }
 
+body {
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+@media (max-width: 1024px) {
+  .nav-links {
+    display: none; /* Hide by default */
+    flex-direction: column; /* Stack vertically */
+    background-color: var(--ink); /* Set background color */
+    position: static; /* Positioning the menu */
+    top: 50px; /* Adjust based on your header height */
+    right: 0; /* Align to the right */
+    width: 100%; /* Full width */
+  }
+  .nav-links.active {
+    display: flex;
+  }
+
+  .burger-menu {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .site-header--home nav {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .logo {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
   h1 {
     font-size: 40px;
@@ -760,17 +827,27 @@ img {
   }
 
   .feature-row {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Stack feature cards */
     gap: 32px;
     margin-bottom: 64px;
   }
 
-  .feature-row--reverse .feature-media {
-    order: 0;
+  .card-grid {
+    grid-template-columns: 1fr; /* Stack cards */
   }
 
-  .card-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .nav {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+  }
+
+  .nav a {
+    margin-bottom: 8px;
+  }
+
+  .nav-links {
+    display: none;
   }
 
   .contact-layout {
@@ -779,7 +856,25 @@ img {
   }
 
   .footer-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+  }
+
+  .btn {
+    padding: 8px 12px; /* Adjust padding for smaller buttons */
+    font-size: 1rem; /* Change font size to make it smaller */
+    border-width: 1px; /* Adjust border width if necessary */
+  }
+
+  /* If you have specific classes for different button styles */
+  .btn--ghost {
+    background-color: transparent; /* Keep the same appearance */
+    color: #fff; /* Adjust color as needed */
+    border: 2px solid #fff; /* Adjust border for visibility */
+  }
+
+  .playbook-grid {
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -788,15 +883,12 @@ img {
     font-size: 34px;
   }
 
-  .card-grid {
-    grid-template-columns: 1fr;
+  .nav-links li {
+    justify-content: space-around; /* Spread links evenly */
+    padding: 10px 0; /* Add padding for better touch targets */
   }
 
   .cta-body {
     padding: 32px 24px;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr;
   }
 }
